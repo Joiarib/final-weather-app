@@ -1,0 +1,1 @@
+alert("Pretty girls");
