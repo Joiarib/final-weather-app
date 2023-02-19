@@ -9,17 +9,13 @@ h1 {
   line-height: 28px;
   font-weight: 100;
 }
-.weather-app {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid rgb(243, 154, 169);
-  border-radius: 10px;
-  color: rgb(238, 166, 178);
-}
+
 ul {
   margin: 0;
   padding: 0;
+}
+#windSpeed {
+  text-transform: lowercase;
 }
 li {
   list-style: none;
@@ -29,4 +25,36 @@ li {
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
+  text-transform: capitalize;
+}
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid rgb(243, 154, 169);
+  border-radius: 10px;
+  color: rgb(238, 166, 178);
+}
+.overview {
+  margin-bottom: 20px;
+}
+.weather-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+.weather-temperature strong {
+  color: red;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }

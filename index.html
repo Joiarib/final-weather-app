@@ -11,11 +11,8 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/style.css" />
 
     <title>Weather app</title>
@@ -23,29 +20,38 @@
 
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Boston, MA</h1>
-        <ul>
-          <li>Wednesday 6:36pm</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Clear"
-            />
-            59°F | °C
-          </div>
-          <div class="col-6">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1 id="city"></h1>
             <ul>
-              <li>Precipitation: 6%</li>
-              <li>Humidity: 76%</li>
-              <li>Wind Speed: 3km/hr</li>
-              <li>Sunrise: 6:00am</li>
-              <li>sunset: 7:00 pm</li>
+              <li id="date">Wednesday 6:36pm</li>
+              <li id="description"></li>
             </ul>
           </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong id="temperature"></strong>
+                  <span class="units">°F | <a href="#">°C</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Feels Like: <span id="feelsLike"></span>°</li>
+                <li>Humidity: <span id="humidity"> </span>%</li>
+                <li id="windSpeed">Wind: <span id="wind"></span> mph</li>
+              </ul>
+            </div>
+          </div>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
         <small>
           <a
