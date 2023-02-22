@@ -22,6 +22,27 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-10">
+                <input
+                  type="search"
+                  placeholder="Search for new city"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-110"
+                />
+              </div>
+            </div>
+          </form>
+
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -35,6 +56,7 @@
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                   alt="Clear"
+                  id="icon"
                   class="float-left"
                 />
                 <div class="float-left">
