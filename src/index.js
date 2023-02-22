@@ -53,6 +53,20 @@ function searchSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+function farenheightConversion(event) {
+  event.preventDefault();
+  let celsius = document.querySelector("#units");
+  celsius.innerHTML = Math.round(response.data.main.temp - 32 * 0.5556);
+}
+function celsiusConversion(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let celsiusTemp = (farenheightTemperature - 32) * 0.555;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+let farenheightTemperature = null;
 search("Boston");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchSubmit);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", celsiusConversion);
