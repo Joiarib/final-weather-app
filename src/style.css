@@ -61,3 +61,25 @@ li:first-letter {
   font-size: 16px;
   top: -34px;
 }
+.weather-temperature .active {
+  color: orange;
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(34, 98, 98);
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.6;
+}
+.minimum-temp {
+  opacity: 0.5;
+}
+.weather-forecast-temp {
+  font-size: 13px;
+}
