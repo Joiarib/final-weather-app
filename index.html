@@ -24,7 +24,7 @@
         <div class="weather-app">
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-10">
+              <div class="col-9">
                 <input
                   type="search"
                   placeholder="Search for new city"
@@ -33,7 +33,7 @@
                   autocomplete="off"
                 />
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input
                   type="submit"
                   value="Search"
@@ -73,25 +73,12 @@
                 <li>Feels Like: <span id="feelsLike"></span>°</li>
                 <li>Humidity: <span id="humidity"> </span>%</li>
                 <li id="windSpeed">Wind: <span id="wind"></span> mph</li>
+                <li>Sunrise: <span id="sunrise"></span></li>
+                <li>Sunset: <span id="sunset"></span></li>
               </ul>
             </div>
           </div>
-          <div class="weather-forecast" id="forecast">
-            <div class="row">
-              <div class="col-2">
-                <div class="weather-forecast-date">Thurs</div>
-                <img
-                  src="http://openweathermap.org/img/wn/10n@2x.png"
-                  alt=""
-                  width="42"
-                />
-                <div class="weather-forecast-temp">
-                  <span class="maximum-temp">18</span
-                  ><span class="minimum-temp"> 12 </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
         <small>
           <a

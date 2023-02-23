@@ -35,11 +35,9 @@ li:first-letter {
   margin: 30px auto;
 }
 .weather-app {
-  max-width: 600px;
-  margin: 30px auto;
   padding: 20px;
   border: 1px solid rgb(243, 154, 169);
-  border-radius: 10px;
+  border-radius: 5px;
   color: rgb(238, 166, 178);
 }
 .overview {
