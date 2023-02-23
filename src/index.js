@@ -1,13 +1,13 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-  let AMorPm = hours >= 12 ? "pm" : "am";
+
   hours = hours % 12 || 12;
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let finalTime = "Time -" + hours + ":" + minutes + "" + AMorPm;
+
   let days = [
     "Sunday",
     "Monday",
@@ -21,8 +21,10 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 function displayTemperature(response) {
+  console.log(response);
+  fahrenheitTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let dateElement = document.querySelector("#date");
@@ -53,20 +55,24 @@ function searchSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-function farenheightConversion(event) {
-  event.preventDefault();
-  let celsius = document.querySelector("#units");
-  celsius.innerHTML = Math.round(response.data.main.temp - 32 * 0.5556);
-}
 function celsiusConversion(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let celsiusTemp = (farenheightTemperature - 32) * 0.555;
+  let celsiusTemp = (fahrenheitTemp - 32) * (5 / 9);
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
-let farenheightTemperature = null;
+function fahrenheitConversion(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  temperatureElement.innerHTML = fahrenheitTemp;
+}
+
+let fahrenheitTemp = null;
 search("Boston");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchSubmit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", celsiusConversion);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", fahrenheitConversion);
