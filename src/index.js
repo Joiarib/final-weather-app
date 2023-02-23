@@ -24,8 +24,19 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Friday", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
   return days[day];
+}
+function formatTime(timestamp) {
+  console.log(timestamp);
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+
+  let minutes = date.getMinutes();
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  return `${hours}:${minutes} ${ampm}`;
 }
 function displayForecast(response) {
   console.log(response.data.daily);
@@ -85,9 +96,9 @@ function displayTemperature(response) {
   let feelsLike = document.querySelector("#feelsLike");
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   let sunrise = document.querySelector("#sunrise");
-  sunrise.innerHTML = response.data.sys.sunrise;
+  sunrise.innerHTML = formatTime(response.data.sys.sunrise);
   let sunset = document.querySelector("#sunset");
-  sunset.innerHTML = response.data.sys.sunset;
+  sunset.innerHTML = formatTime(response.data.sys.sunset);
   let iconElement = document.querySelector("#icon");
 
   iconElement.setAttribute(
