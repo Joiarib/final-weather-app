@@ -1,5 +1,6 @@
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
+  console.log(timestamp);
+  let date = new Date(timestamp * 1000);
   let hours = date.getHours();
 
   hours = hours % 12 || 12;
@@ -7,7 +8,14 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  let options = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  };
+  let timeString = date.toLocaleString("en-US", options);
+  console.log(timeString);
   let days = [
     "Sunday",
     "Monday",
@@ -18,7 +26,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${timeString}`;
 }
 
 function formatDay(timestamp) {
@@ -28,15 +36,24 @@ function formatDay(timestamp) {
   return days[day];
 }
 function formatTime(timestamp) {
-  console.log(timestamp);
-  let date = new Date(timestamp);
+  let date = new Date(timestamp * 1000);
   let hours = date.getHours();
-  let ampm = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12;
 
+  hours = hours % 12 || 12;
   let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   minutes = minutes < 10 ? "0" + minutes : minutes;
-  return `${hours}:${minutes} ${ampm}`;
+  let options = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  };
+  let timeString = date.toLocaleString("en-US", options);
+  console.log(timeString);
+
+  return `${timeString} `;
 }
 function displayForecast(response) {
   console.log(response.data.daily);
@@ -59,12 +76,10 @@ function displayForecast(response) {
         alt=""
         width="42"
       />
-      <div class="weather-forecast-temp">
+      
         <span class="maximum-temp">${Math.round(forecastDay.temp.max)}° |</span>
         <span class="minimum-temp"> ${Math.round(forecastDay.temp.min)}° </span>
-      </div>
-    </div>
-  `;
+      </div>`;
     }
   });
 
@@ -86,7 +101,7 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.dt);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
