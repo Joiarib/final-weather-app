@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Caramel&display=swap");
+div {
+  display: block;
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family: "poppins";
 }
 h1 {
   color: pink;
@@ -19,8 +23,7 @@ ul {
 }
 li {
   list-style: none;
-  margin: 0;
-  padding: 0;
+
   color: blue;
   font-size: 16px;
   font-weight: 100;
@@ -31,7 +34,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 30px auto;
 }
 .weather-app {
@@ -67,9 +70,17 @@ li:first-letter {
   text-decoration: none;
 }
 .weather-forecast {
+  background: rgba(24, 24, 27, 0.4);
+  padding: 25px;
+
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+
   margin-top: 20px;
   text-align: center;
-  color: rgb(34, 98, 98);
+  color: white;
 }
 .weather-forecast-date {
   font-size: 16px;
@@ -80,4 +91,21 @@ li:first-letter {
 }
 .weather-forecast-temp {
   font-size: 13px;
+}
+.weather-forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.current-items {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #eee;
 }
