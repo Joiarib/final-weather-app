@@ -5,6 +5,7 @@ div {
 body {
   font-family: "poppins";
 }
+
 h1 {
   color: pink;
 
@@ -42,9 +43,10 @@ li:first-letter {
   border: 1px solid rgb(243, 154, 169);
   border-radius: 5px;
   color: rgb(238, 166, 178);
+  background: rgb(246, 210, 216);
 }
 .overview {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .weather-temperature img {
   margin-right: 5px;
@@ -104,8 +106,17 @@ li:first-letter {
   background: rgba(0, 0, 0, 0.2);
 }
 .current-items {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  text-align: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0.3, 0.3);
+  position: fixed;
+  margin: 10px 0;
+  top: 20%;
+  right: 20%;
+  padding: 15px;
+  font-size: 28px;
+  font-weight: 100;
   border: 1px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
