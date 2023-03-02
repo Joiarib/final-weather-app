@@ -169,4 +169,24 @@ celsiusLink.addEventListener("click", celsiusConversion);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", fahrenheitConversion);
 
+function showWeather(response) {
+  document.querySelector("h1").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+}
+function showPosition(position) {
+  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+let currentTemp = document.querySelector("#current-location");
+currentTemp.addEventListener("click", getCurrentPosition);
 search("Boston");

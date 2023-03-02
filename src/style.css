@@ -1,13 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Caramel&display=swap");
-div {
-  display: block;
-}
+
 body {
-  font-family: "poppins";
+  display: block;
 }
 
 h1 {
-  color: pink;
+  color: white;
 
   font-size: 24px;
   margin-bottom: 0;
@@ -25,7 +23,7 @@ ul {
 li {
   list-style: none;
 
-  color: blue;
+  color: white;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -40,10 +38,32 @@ li:first-letter {
 }
 .weather-app {
   padding: 20px;
-  border: 1px solid rgb(243, 154, 169);
+  border: 1px solid rgb(204, 231, 204);
   border-radius: 5px;
-  color: rgb(238, 166, 178);
+  color: white;
   background: rgb(246, 210, 216);
+  background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/069/592/original/fac337af617970b5491a1946be81956e.jpg?1677714087");
+  overflow: auto;
+  display: block;
+  font-family: "poppins";
+}
+form {
+  position: relative;
+  left: 5%;
+  margin-top: 2%;
+  border-radius: 4px;
+  font-family: "poppins";
+}
+#search-button {
+  background-color: #7d8d84;
+  border: white;
+}
+#current-location {
+  background-color: #7d8d84;
+  border: white;
+  position: fixed;
+  left: 81%;
+  bottom: 84%;
 }
 .overview {
   margin-bottom: 30px;
@@ -54,7 +74,7 @@ li:first-letter {
   width: 64px;
 }
 .weather-temperature strong {
-  color: red;
+  color: white;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -65,14 +85,14 @@ li:first-letter {
   top: -34px;
 }
 .weather-temperature .active {
-  color: orange;
+  color: rgb(91, 110, 93);
   cursor: default;
 }
 .weather-temperature .active:hover {
   text-decoration: none;
 }
 .weather-forecast {
-  background: rgba(24, 24, 27, 0.4);
+  background: rgba(109, 126, 113, 0.4);
   padding: 25px;
 
   width: 100%;
@@ -107,15 +127,15 @@ li:first-letter {
 }
 .current-items {
   color: #ffffff;
-  background: rgba(0, 0, 0.3, 0.3);
-  position: fixed;
-  margin: 10px 0;
-  top: 20%;
-  right: 20%;
-  padding: 15px;
+  background: rgba(109, 126, 113, 0.4);
+  position: relative;
+  left: 100%;
+  bottom: 40%;
+  text-align: center;
+  padding: 25px 20px 20px;
   font-size: 28px;
   font-weight: 100;
-  border: 1px solid #eee;
+  border: 2px solid #eee;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

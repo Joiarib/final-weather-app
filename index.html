@@ -38,11 +38,18 @@
                   type="submit"
                   value="Search"
                   class="btn btn-primary w-110"
+                  id="search-button"
                 />
               </div>
             </div>
           </form>
-
+          <button
+            id="current-location"
+            class="btn btn-primary w-110"
+            type="submit"
+          >
+            Current city
+          </button>
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -68,7 +75,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <div class="current-items">
                 <ul>
                   <li>Feels Like: <span id="feelsLike"></span>°</li>
